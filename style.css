@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.title {
+  text-align: center;
+  color: #00ffcc;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* one line for 5 inputs */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.title-input, .date-input, .priority-input, .add-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.title-input:focus, .date-input:focus, .priority-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.add-button {
+  background: #ff007a;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border: 2px solid #ff007a;
+  text-shadow: 0 0 5px #ff007a;
+}
+
+.add-button:hover {
+  background: transparent;
+  box-shadow: 0 10px #ff007a;
+  transform: translateY(-2px);
+}
+
+
+.todo-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.todo-item.high {
+  border-left-color: #ff007a;
+  box-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
+}
+
+.todo-item.medium {
+  border-left-color: #ffea00;
+  box-shadow: 0 0 15px rgba(255, 234, 0, 0.3);
+}
+
+.todo-item.low {
+  border-left-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.delete-button, .edit-button, .save-button, .cancel-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  font-weight: 500;
+  
+}
+
+.delete-button {
+  background: #ff007a;
+  border: 2px solid #ff007a;
+}
+
+.delete-button:hover {
+  background: transparent;
+  box-shadow: 0 0 10px #ff007a;
+}
+
+.edit-button {
+  background: #00ffcc;
+  border: 2px solid #00ffcc;
+}
+
+.edit-button:hover {
+  background: transparent;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.save-button {
+  background: #00ffcc;
+  border: 2px solid #00ffcc;
+}
+
+.save-button:hover {
+  background: transparent;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.cancel-button {
+  background: #666;
+  border: 2px solid #666;
+}
+
+.cancel-button:hover {
+  background: transparent;
+  box-shadow: 0 0 10px #666;
+}
+
+.edit-title-input, .edit-date-input, .edit-priority-input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.edit-title-input:focus, .edit-date-input:focus, .edit-priority-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+@media (max-width: 768px) {
+  .input-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .todo-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+  }
+}
+
+.category-input, .status-input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.category-input:focus, .status-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.edit-category-input, .edit-status-input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.edit-category-input:focus, .edit-status-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
